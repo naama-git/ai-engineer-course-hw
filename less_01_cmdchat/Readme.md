@@ -16,4 +16,4 @@ Since I'm a CLI agent, I must provide the response in the required JSON format w
 
 לאחר שהוספתי לו דוגמא הפוכה, סוף סוף זה עבד.
 
-
+**בתיקייה PROMPTS נמצאי כל הפרומפטים**
