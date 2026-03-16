@@ -24,6 +24,8 @@ vector_store, storage_context, pinecone_index = init_app_settings()
 index = None
 query_engine = None
 
+
+# builds retriever with Pinecone index 
 def build_retriever(target_index,similarity_top_k: int = 5) -> VectorIndexRetriever:
     retriever = VectorIndexRetriever(
         index=target_index,
@@ -32,7 +34,8 @@ def build_retriever(target_index,similarity_top_k: int = 5) -> VectorIndexRetrie
     return retriever
 
 
-def build_query_engine(target_index, similarity_top_k: int = 5, similarity_cutoff: float = 0.5):
+#
+def build_query_engine(target_index, similarity_top_k: int = 7, similarity_cutoff: float = 0.5):
     retriever = build_retriever(target_index, similarity_top_k)
     
     postprocessors = [
@@ -79,12 +82,15 @@ def run_query(question: str) -> tuple[str, str]:
         lines.append(f"\n**{i}. {s['file']}** (score: {s['score']})\n> {s['text']}\n")
     return answer, "\n".join(lines)
 
+
+
 def _rebuild_engine(top_k: int, cutoff: float) -> None:
     global query_engine, index
     if index is None:
         print("Warning: index not initialized, cannot rebuild engine.")
         return
     query_engine = build_query_engine(index, similarity_top_k=top_k, similarity_cutoff=cutoff)
+
 
 async def initialize_system():
     global index, query_engine
