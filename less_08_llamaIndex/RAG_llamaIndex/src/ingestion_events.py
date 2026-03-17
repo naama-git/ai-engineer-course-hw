@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from llama_index.core.workflow import Workflow, StartEvent ,StopEvent , Event, step 
 import netfree_patch
@@ -37,20 +38,50 @@ class IngestionWorkflow(Workflow):
         already_indexed = stats["total_vector_count"] > 0
         if already_indexed:
             print(f"Index already has {stats['total_vector_count']} vectors, skipping ingestion.")
-            return StopEvent(result=index)
+            # return CheckIndex(data_path=ev.data_path, skip=already_indexed)
         return CheckIndex(data_path=ev.data_path, skip=already_indexed)
 
     @step
     async def load_data(self, ev:CheckIndex)-> ChanckDocuments|StopEvent:
-        if ev.skip:
-            return StopEvent(result=None)
+       
         try:
-            documents = SimpleDirectoryReader(ev.data_path, required_exts=[".md"]).load_data()
-            print("Documents loaded")
+            reader = SimpleDirectoryReader(
+                ev.data_path, 
+                required_exts=[".md"], 
+                recursive=True, 
+                file_metadata=lambda fp: {
+                    "directory_name": os.path.basename(os.path.dirname(fp)),
+                    "tool": os.path.basename(os.path.dirname(fp)),
+                    "file_name": os.path.basename(fp)
+                }
+            )
+
+            input_files = reader.list_resources()
+            files_to_process = []
+
+            for file_path in input_files:
+                str_path = str(file_path)
+                
+                if str_path not in self.index.ref_doc_info:
+                    files_to_process.append(file_path)
+                else:
+                    current_doc = reader.load_file(file_path)
+                    if self.index.ref_doc_info[str_path].hash != current_doc[0].hash:
+                        files_to_process.append(file_path)
+
+            if not files_to_process:
+                print("new files or changes were not found. stops workflow.")
+                return StopEvent(result="No changes detected, index is up to date.")
+
+            reader.input_files = files_to_process
+            documents = reader.load_data()
+            
+            print(f"{len(documents)} updates found.")
             return ChanckDocuments(documents=documents)
+
         except Exception as e:
-            print(f"Error loading data: {e}")
-            return StopEvent(result=None)
+            print(f"Error during data loading: {e}")
+            return StopEvent(result=f"Error: {str(e)}")
     
     @step
     async def chunk_documents(self, ev:ChanckDocuments)->EmbeddingIndexing:

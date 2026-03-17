@@ -42,6 +42,9 @@ async def initialize_system():
 
 
 async def async_query(question: str) -> tuple[str, list[dict]]:
+    if(question==""):
+        return "Oops! it seems you didn't send anything!", "no resources found"
+    
     bundle = QueryBundle(query_str=question)
     response = await query_engine.aquery(bundle)
 
@@ -58,6 +61,8 @@ async def async_query(question: str) -> tuple[str, list[dict]]:
 
 
 def run_query(question: str) -> tuple[str, str]:
+    if(question==""):
+        return "Oops! it seems you didn't send anything!", "no resources found"
     answer, sources = asyncio.run(async_query(question))
     if not sources:
         return answer, "_No sources found._"
