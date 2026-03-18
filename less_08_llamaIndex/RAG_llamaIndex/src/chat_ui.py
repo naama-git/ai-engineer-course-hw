@@ -195,23 +195,19 @@ footer { display: none !important; }
 # ─────────────────────────────────────────────────────────────────────────────
 # בנאי הממשק
 # ─────────────────────────────────────────────────────────────────────────────
-def build_gradio_app(run_query_fn, rebuild_engine_fn) -> gr.Blocks:
+def build_gradio_app(run_query_fn) -> gr.Blocks:
 
     # ── callbacks ──────────────────────────────────────────────────────────
-    def chat_fn(message: str, history: list):
+    async def chat_fn(message: str, history: list):
         if not message.strip():
             return history, "", ""
 
-        answer, sources_md = run_query_fn(message)
+        answer, sources_md = await run_query_fn(message)
 
         history = history or []
         history.append({"role": "user",      "content": message})
         history.append({"role": "assistant", "content": answer})
         return history, "", sources_md
-
-    def apply_settings(top_k, cutoff):
-        rebuild_engine_fn(int(top_k), float(cutoff))
-        return gr.update(value="✅ הגדרות עודכנו.")
 
     def clear_chat():
         return [], "","_The resources will appear here after a query._"
@@ -284,10 +280,5 @@ def build_gradio_app(run_query_fn, rebuild_engine_fn) -> gr.Blocks:
             outputs=[chatbot, msg_box, sources_box],
         )
         clear_btn.click(clear_chat, outputs=[chatbot, msg_box, sources_box])
-        apply_btn.click(
-            apply_settings,
-            inputs=[top_k_slider, cutoff_slider],
-            outputs=[sources_box],
-        )
 
     return demo

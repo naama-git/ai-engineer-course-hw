@@ -1,7 +1,12 @@
+# ------- Event-driven workflow to initialize pinecone index with vector data
+# ------- it loads all data files, chancks them and embeds it
+# ------- finally, it saves the data into pinecone vector index
+
+
 import asyncio
 import os
 
-from llama_index.core.workflow import Workflow, StartEvent ,StopEvent , Event, step 
+from llama_index.core.workflow import Workflow, StartEvent ,StopEvent , Event, step , Context
 import netfree_patch
   
 from llama_index.core import (
@@ -18,9 +23,8 @@ load_dotenv()
 vector_store, storage_context, pinecone_index = init_app_settings()
 index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
 
-class CheckIndex(Event):
-    data_path: str
-    skip: bool
+class InitData(Event):
+    data_path:str
 
 class ChanckDocuments(Event):
     documents: list
@@ -31,56 +35,39 @@ class EmbeddingIndexing(Event):
     nodes: list
 
 class IngestionWorkflow(Workflow):
-
-    @step
-    async def check_index(self, ev: StartEvent) -> CheckIndex:
+    @step 
+    async def InitializeContext(self, ev:StartEvent, ctx:Context)->InitData:
         stats = pinecone_index.describe_index_stats()
-        already_indexed = stats["total_vector_count"] > 0
-        if already_indexed:
-            print(f"Index already has {stats['total_vector_count']} vectors, skipping ingestion.")
-            # return CheckIndex(data_path=ev.data_path, skip=already_indexed)
-        return CheckIndex(data_path=ev.data_path, skip=already_indexed)
+        vector_count = stats['total_vector_count']
+
+        if vector_count > 0:
+            print(f"Index already contains {vector_count} vectors. Skipping ingestion.")
+            return StopEvent(result=index)
+      
+        await ctx.store.set("index", index)
+        return InitData(data_path=ev.data_path)
+
 
     @step
-    async def load_data(self, ev:CheckIndex)-> ChanckDocuments|StopEvent:
-       
+    async def load_data(self, ev:InitData, ctx:Context)-> ChanckDocuments| StopEvent:
+        # current_index = await ctx.store.get("index")
         try:
             reader = SimpleDirectoryReader(
                 ev.data_path, 
-                required_exts=[".md"], 
+                required_exts=[".md", ".MD"], 
                 recursive=True, 
+                exclude_hidden=False,
                 file_metadata=lambda fp: {
                     "directory_name": os.path.basename(os.path.dirname(fp)),
                     "tool": os.path.basename(os.path.dirname(fp)),
                     "file_name": os.path.basename(fp)
                 }
             )
-
-            input_files = reader.list_resources()
-            files_to_process = []
-
-            for file_path in input_files:
-                str_path = str(file_path)
-                
-                if str_path not in self.index.ref_doc_info:
-                    files_to_process.append(file_path)
-                else:
-                    current_doc = reader.load_file(file_path)
-                    if self.index.ref_doc_info[str_path].hash != current_doc[0].hash:
-                        files_to_process.append(file_path)
-
-            if not files_to_process:
-                print("new files or changes were not found. stops workflow.")
-                return StopEvent(result="No changes detected, index is up to date.")
-
-            reader.input_files = files_to_process
             documents = reader.load_data()
-            
-            print(f"{len(documents)} updates found.")
             return ChanckDocuments(documents=documents)
 
         except Exception as e:
-            print(f"Error during data loading: {e}")
+            print(f"[load_data] Error: {e}")
             return StopEvent(result=f"Error: {str(e)}")
     
     @step

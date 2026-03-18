@@ -1,3 +1,4 @@
+# ------- A configuration file for LLM's settings and Pinecone index ------
 import os
 from pinecone import Pinecone
 from llama_index.core import Settings, StorageContext
@@ -9,12 +10,12 @@ from google.genai.types import EmbedContentConfig
 def init_app_settings():
     
     Settings.llm = GoogleGenAI(
-        model="models/gemini-3-flash-preview",
+        model=os.environ.get("LLM"),
         api_key=os.environ.get("GEMINI_API_KEY"),
     )
 
     Settings.embed_model = GoogleGenAIEmbedding(
-        model_name="models/gemini-embedding-001",
+        model_name=os.environ.get("EMBEDDING_LLM"),
         api_key=os.environ.get("GEMINI_API_KEY"),
         embedding_config=EmbedContentConfig(output_dimensionality=768),
     )

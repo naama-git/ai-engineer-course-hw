@@ -1,4 +1,6 @@
-# netfree_patch.py
+# ---- A configuration file to define netfree certificate for all dependencies in the project
+
+
 import os
 import ssl
 import certifi

@@ -1,7 +1,10 @@
+# ----------- A workflow to build pinecone query engine. -------------------
+# ---- it defines the retriever, postprocessor and synthesizer -------------
+# -- ןt is triggered whenever semantic search by content is required. ------
 
 import netfree_patch
 
-from llama_index.core.workflow import Workflow, StartEvent ,StopEvent , Event, step , Context
+from llama_index.core.workflow import Workflow, StartEvent ,StopEvent , Event, step 
  
 from llama_index.core.retrievers import VectorIndexRetriever
 from llama_index.core.query_engine import RetrieverQueryEngine
@@ -32,15 +35,16 @@ class BuildSynthesizerEvent(Event):
 
 
 class AgentWorkFlow(Workflow):
+
     @step
-    async def build_retriever(self, ev:StartEvent) ->BuildRetrieverEvent:
+    async def build_retriever(self, ev:StartEvent) -> BuildRetrieverEvent:
         return BuildRetrieverEvent(
             index=ev.index,
             top_k=ev.top_k or 7,
         )
     
     @step
-    async def bulid_postprocessor(self, ev:BuildRetrieverEvent)->BuildPostprocessorEvent:
+    async def build_postprocessor(self, ev:BuildRetrieverEvent)->BuildPostprocessorEvent:
         retriever = VectorIndexRetriever(
             index=ev.index,
             similarity_top_k=ev.top_k,
