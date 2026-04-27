@@ -1,0 +1,31 @@
+2026-04-27 19:39:29,859 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:39:29,861 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:39:59,807 - INFO - Processing request of type CallToolRequest
+2026-04-27 19:39:59,808 - INFO - \U0001f50d Checking Playwright browser instance...
+2026-04-27 19:39:59,809 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-04-27 19:42:40,203 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:42:40,207 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:42:42,217 - INFO - Processing request of type CallToolRequest
+2026-04-27 19:42:42,217 - INFO - \U0001f50d Checking Playwright browser instance...
+2026-04-27 19:42:42,217 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-04-27 19:44:55,433 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:44:55,435 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:44:57,428 - INFO - Processing request of type CallToolRequest
+2026-04-27 19:44:57,428 - INFO - \U0001f50d Checking Playwright browser instance...
+2026-04-27 19:44:57,428 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-04-27 19:45:47,412 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:47:24,235 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:47:39,941 - INFO - Processing request of type CallToolRequest
+2026-04-27 19:47:39,942 - INFO - \U0001f50d Checking Playwright browser instance...
+2026-04-27 19:47:39,942 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-04-27 19:50:41,135 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:51:41,459 - INFO - Processing request of type ListToolsRequest
+2026-04-27 19:51:43,875 - INFO - Processing request of type CallToolRequest
+2026-04-27 19:51:43,875 - INFO - \U0001f50d Checking Playwright browser instance...
+2026-04-27 19:51:43,875 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2026-04-27 19:54:13,887 - INFO - Processing request of type ListToolsRequest

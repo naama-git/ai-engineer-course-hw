@@ -23,7 +23,7 @@ load_dotenv()
 
 class ChatHost:
     def __init__(self):
-        self.mcp_clients: list[MCPClient] = [MCPClient("./weather_USA.py")]
+        self.mcp_clients: list[MCPClient] = [MCPClient("./weather_Israel.py")]
         self.tool_clients: dict[str, tuple[MCPClient, str]] = {}
         self.clients_connected = False
         self.exit_stack = AsyncExitStack()
@@ -31,6 +31,9 @@ class ChatHost:
         
         self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
         self.model = os.environ["GEMINI_MODEL"]
+
+        with open("system_prompt.txt", "r", encoding="utf-8") as f:
+            self.system_prompt = f.read()
 
     async def connect_mcp_clients(self):
         """Connect all configured MCP clients once."""
@@ -71,14 +74,12 @@ class ChatHost:
                         if isinstance(obj, dict):
                             new_dict = {}
                             for k, v in obj.items():
-                                # דילוג על שדות אסורים
                                 if k in ['title', 'default', '$schema', 'definitions', 'examples']:
                                     continue
                                 
-                                # אם זה שדה ה-type, ננרמל אותו
                                 if k == 'type':
                                     if v == 'number':
-                                        new_dict[k] = 'NUMBER' # ננסה עם אותיות גדולות
+                                        new_dict[k] = 'NUMBER'
                                     elif isinstance(v, list):
                                         new_dict[k] = v[0]
                                     else:
@@ -119,7 +120,8 @@ class ChatHost:
         tools_list = await self.get_available_tools() 
         
         config = types.GenerateContentConfig(
-        tools=[{"function_declarations": tools_list}]
+        tools=[{"function_declarations": tools_list}],
+        system_instruction=self.system_prompt
         )
         
         chat = self.client.chats.create(model=self.model, config=config)
@@ -128,6 +130,7 @@ class ChatHost:
         final_text = []
 
         while response.function_calls:
+            print(f"🤖 Gemini calls: {[c.name for c in response.function_calls]}")
             tool_results = []
             for call in response.function_calls:
                 tool_name = call.name
