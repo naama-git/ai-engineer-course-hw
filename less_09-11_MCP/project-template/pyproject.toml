@@ -10,4 +10,7 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "playwright>=1.44.0",
     "google-generativeai>=0.8.6",
+    "aiohttp>=3.13.5",
+    "google-genai>=1.73.1",
+    "truststore>=0.10.4",
 ]

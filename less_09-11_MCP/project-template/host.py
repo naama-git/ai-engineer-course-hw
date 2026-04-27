@@ -1,16 +1,25 @@
+import os
+os.environ['PYTHONHTTPSVERIFY'] = '0'
+import certifi
+import ssl
+
+import truststore
+truststore.inject_into_ssl()
+
+os.environ['SSL_CERT_FILE'] = certifi.where()
+os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 import asyncio
 from contextlib import AsyncExitStack
 from typing import Any
-
-import httpx
-
-import google.generativeai as genai
-import os
+from google import genai
+from google.genai import types
 from client import MCPClient
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 class ChatHost:
     def __init__(self):
@@ -18,11 +27,10 @@ class ChatHost:
         self.tool_clients: dict[str, tuple[MCPClient, str]] = {}
         self.clients_connected = False
         self.exit_stack = AsyncExitStack()
-        genai.configure(api_key=os.environ["GEMINI_API_KEY"], 
-                    transport="rest")
-        # For Netfree
-        transport = httpx.HTTPTransport(verify=False)
-        self.model = genai.GenerativeModel(os.environ["GEMINI_MODEL"])
+
+        
+        self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        self.model = os.environ["GEMINI_MODEL"]
 
     async def connect_mcp_clients(self):
         """Connect all configured MCP clients once."""
@@ -37,6 +45,7 @@ class ChatHost:
             raise RuntimeError("No MCP clients are connected")
 
         self.clients_connected = True
+
 
     async def get_available_tools(self) -> list[dict[str, Any]]:
         """Collect tools from all MCP clients and map them back to their owner."""
@@ -57,10 +66,41 @@ class ChatHost:
                         raise RuntimeError(f"Duplicate tool name detected: {exposed_name}")
 
                     self.tool_clients[exposed_name] = (client, tool.name)
+
+                    def sanitize(obj):
+                        if isinstance(obj, dict):
+                            new_dict = {}
+                            for k, v in obj.items():
+                                # דילוג על שדות אסורים
+                                if k in ['title', 'default', '$schema', 'definitions', 'examples']:
+                                    continue
+                                
+                                # אם זה שדה ה-type, ננרמל אותו
+                                if k == 'type':
+                                    if v == 'number':
+                                        new_dict[k] = 'NUMBER' # ננסה עם אותיות גדולות
+                                    elif isinstance(v, list):
+                                        new_dict[k] = v[0]
+                                    else:
+                                        new_dict[k] = v
+                                else:
+                                    new_dict[k] = sanitize(v)
+                            return new_dict
+                        elif isinstance(obj, list):
+                            return [sanitize(item) for item in obj]
+                        return obj
+                    params = sanitize(tool.inputSchema)
+        
+                    formatted_parameters = {
+                        "type": "OBJECT",
+                        "properties": params.get("properties", {}),
+                        "required": params.get("required", [])
+                    }
+
                     tool_def = {
                     "name": exposed_name,
                     "description": f"[{client.client_name}] {tool.description}",
-                    "parameters": tool.inputSchema # שים לב: שינוי מ-input_schema ל-parameters
+                    "parameters": formatted_parameters
                 }
                 google_tools.append(tool_def)
 
@@ -78,48 +118,48 @@ class ChatHost:
         """Process a query using Gemini and available tools"""
         tools_list = await self.get_available_tools() 
         
-        chat = self.model.start_chat(history=[])
+        config = types.GenerateContentConfig(
+        tools=[{"function_declarations": tools_list}]
+        )
         
-        response = await chat.send_message_async(query, tools=tools_list)
+        chat = self.client.chats.create(model=self.model, config=config)
+        
+        response = chat.send_message(query)
         final_text = []
 
-        while True:
-            if not response.candidates[0].content.parts or not any(p.function_call for p in response.candidates[0].content.parts):
-                final_text.append(response.text)
-                break
-
+        while response.function_calls:
             tool_results = []
-            for part in response.candidates[0].content.parts:
-                if fn := part.function_call:
-                    tool_name = fn.name
-                    tool_args = dict(fn.args)
-                    
-                    final_text.append(f"[Calling tool {tool_name} with args {tool_args}]")
-                    
-                    client, original_tool_name = self.tool_clients[tool_name]
-                    result = await client.session.call_tool(original_tool_name, tool_args)
-
-                    tool_results.append(
-                        genai.types.Part.from_function_response(
-                            name=tool_name,
-                            response={"result": result.content}
-                        )
+            for call in response.function_calls:
+                tool_name = call.name
+                tool_args = call.args
+                
+                final_text.append(f"[Calling tool {tool_name} with args {tool_args}]")
+                
+                client, original_tool_name = self.tool_clients[tool_name]
+                result = await client.session.call_tool(original_tool_name, tool_args)
+                
+                tool_results.append(
+                    types.Part.from_function_response(
+                        name=tool_name,
+                        response={"result": result.content}
                     )
+                )
 
-            response = await chat.send_message_async(tool_results)
-
+            response = chat.send_message(tool_results)
+        
+        final_text.append(response.text)
         return "\n".join(final_text)
     
     async def chat_loop(self):
         """Run an interactive chat loop"""
         print("\nMCP Client Started!")
-        print("Type your queries or 'quit' to exit.")
+        print("Type your queries or 'q' to exit.")
         
         while True:
             try:
                 query = input("\nQuery: ").strip()
                 
-                if query.lower() == 'quit':
+                if query.lower() == 'q':
                     break
                 
                 response = await self.process_query(query)
