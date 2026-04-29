@@ -130,7 +130,6 @@ class ChatHost:
         final_text = []
 
         while response.function_calls:
-            print(f"🤖 Gemini calls: {[c.name for c in response.function_calls]}")
             tool_results = []
             for call in response.function_calls:
                 tool_name = call.name
@@ -167,6 +166,8 @@ class ChatHost:
                 
                 response = await self.process_query(query)
                 print("\n" + response)
+
+                
                 
             except Exception as e:
                 print(f"\nchat_loop Error: {str(e)}")
