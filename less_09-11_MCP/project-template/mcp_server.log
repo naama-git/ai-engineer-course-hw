@@ -1,310 +1,322 @@
-2026-04-27 19:39:29,859 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:39:29,861 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:39:59,807 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:39:59,808 - INFO - \U0001f50d Checking Playwright browser instance...
-2026-04-27 19:39:59,809 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
-Please use the Async API instead.
-2026-04-27 19:42:40,203 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:42:40,207 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:42:42,217 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:42:42,217 - INFO - \U0001f50d Checking Playwright browser instance...
-2026-04-27 19:42:42,217 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
-Please use the Async API instead.
-2026-04-27 19:44:55,433 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:44:55,435 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:44:57,428 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:44:57,428 - INFO - \U0001f50d Checking Playwright browser instance...
-2026-04-27 19:44:57,428 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
-Please use the Async API instead.
-2026-04-27 19:45:47,412 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:47:24,235 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:47:39,941 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:47:39,942 - INFO - \U0001f50d Checking Playwright browser instance...
-2026-04-27 19:47:39,942 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
-Please use the Async API instead.
-2026-04-27 19:50:41,135 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:51:41,459 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:51:43,875 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:51:43,875 - INFO - \U0001f50d Checking Playwright browser instance...
-2026-04-27 19:51:43,875 - INFO - \u274c Failed to select city: It looks like you are using Playwright Sync API inside the asyncio loop.
-Please use the Async API instead.
-2026-04-27 19:54:13,887 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:59:45,519 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:59:45,521 - INFO - Processing request of type ListToolsRequest
-2026-04-27 19:59:51,473 - INFO - Processing request of type CallToolRequest
-2026-04-27 19:59:51,474 - INFO - Checking Playwright browser instance...
-2026-04-27 20:00:02,627 - INFO - weather_forecast for éøåùìéí selected successfully
-2026-04-27 20:00:02,653 - INFO - Warning: RuntimeWarning: coroutine 'Locator.wait_for' was never awaited
-2026-04-27 20:00:02,653 - INFO - Warning: RuntimeWarning: coroutine 'Locator.click' was never awaited
-2026-04-27 20:00:02,653 - INFO - Warning: RuntimeWarning: coroutine 'Page.wait_for_load_state' was never awaited
-2026-04-27 20:02:04,489 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:02:04,492 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:02:35,386 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:02:35,388 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:04:12,621 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:04:12,624 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:06:43,098 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:06:43,100 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:06:44,715 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:06:44,715 - INFO - Checking Playwright browser instance...
-2026-04-27 20:06:51,210 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:06:52,553 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:06:52,554 - INFO - Checking Playwright browser instance...
-2026-04-27 20:06:52,554 - INFO - \u2705 City entered: éøåùìéí
-2026-04-27 20:06:52,554 - INFO - Warning: RuntimeWarning: coroutine 'Locator.fill' was never awaited
-2026-04-27 20:06:54,050 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:06:54,050 - INFO - Checking Playwright browser instance...
-2026-04-27 20:06:54,050 - ERROR - \u274c Failed to select city: object Locator can't be used in 'await' expression
-2026-04-27 20:08:33,225 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:08:33,227 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:08:44,651 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:08:44,651 - INFO - Checking Playwright browser instance...
-2026-04-27 20:08:47,679 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:09:07,394 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:09:07,395 - INFO - Checking Playwright browser instance...
-2026-04-27 20:09:07,461 - ERROR - \u274c Failed to enter city: Locator.fill: Error: strict mode violation: get_by_placeholder("îæâ äàååéø á...") resolved to 2 elements:
-    1) <input autofocus="" type="search" class="empty" id="city_search" autocomplete="off" placeholder="îæâ äàååéø á..."/> aka locator("#city_search")
-    2) <input type="search" class="empty" autocomplete="off" id="city_search_forecast" placeholder="îæâ äàååéø á..."/> aka get_by_role("searchbox", name="îæâ äàååéø á")
-
-Call log:
-  - waiting for get_by_placeholder("îæâ äàååéø á...")
-
-2026-04-27 20:09:26,513 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:09:26,513 - INFO - Checking Playwright browser instance...
-2026-04-27 20:09:26,513 - ERROR - \u274c Failed to select city: object Locator can't be used in 'await' expression
-2026-04-27 20:14:23,304 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:14:23,307 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:14:32,560 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:14:32,561 - INFO - Checking Playwright browser instance...
-2026-04-27 20:14:42,160 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:14:52,874 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:14:52,875 - INFO - Checking Playwright browser instance...
-2026-04-27 20:14:52,919 - INFO - \u2705 City entered: éøåùìéí
-2026-04-27 20:15:05,746 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:15:05,747 - INFO - Checking Playwright browser instance...
-2026-04-27 20:15:05,747 - ERROR - \u274c Failed to select city: object Locator can't be used in 'await' expression
-2026-04-27 20:15:47,242 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:15:53,393 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:15:53,393 - INFO - Checking Playwright browser instance...
-2026-04-27 20:15:55,201 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:16:01,016 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:16:01,016 - INFO - Checking Playwright browser instance...
-2026-04-27 20:16:01,046 - INFO - \u2705 City entered: éøåùìéí
-2026-04-27 20:18:24,090 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:18:29,935 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:18:29,935 - INFO - Checking Playwright browser instance...
-2026-04-27 20:18:31,532 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:18:44,134 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:18:44,134 - INFO - Checking Playwright browser instance...
-2026-04-27 20:18:44,164 - INFO - \u2705 City entered: éøåùìéí
-2026-04-27 20:18:54,670 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:18:54,671 - INFO - Checking Playwright browser instance...
-2026-04-27 20:18:54,671 - ERROR - \u274c Failed to select city: object Locator can't be used in 'await' expression
-2026-04-27 20:22:13,522 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:22:13,524 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:22:22,690 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:22:22,691 - INFO - Checking Playwright browser instance...
-2026-04-27 20:22:27,053 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:22:27,056 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:22:27,056 - INFO - Checking Playwright browser instance...
-2026-04-27 20:22:27,102 - INFO - \u2705 City entered: úì àáéá
-2026-04-27 20:22:27,104 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:22:27,105 - INFO - Checking Playwright browser instance...
-2026-04-27 20:22:27,130 - ERROR - \u274c Failed to select city: Locator.wait_for: Error: strict mode violation: locator("#city_search_forecastautocomplete-list").get_by_text("úì àáéá", exact=True) resolved to 2 elements:
-    1) <strong>úì àáéá</strong> aka get_by_text("úì àáéá").nth(2)
-    2) <strong>úì àáéá</strong> aka get_by_text("úì àáéá").nth(3)
-
-Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("úì àáéá", exact=True) to be visible
-
-2026-04-27 20:24:06,707 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:24:13,773 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:24:13,774 - INFO - Checking Playwright browser instance...
-2026-04-27 20:24:14,712 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:24:22,856 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:24:22,856 - INFO - Checking Playwright browser instance...
-2026-04-27 20:24:22,884 - INFO - \u2705 City entered: çåìåï
-2026-04-27 20:24:29,026 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:24:29,027 - INFO - Checking Playwright browser instance...
-2026-04-27 20:24:33,862 - INFO - weather_forecast for çåìåï selected successfully
-2026-04-27 20:25:44,375 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:25:54,288 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:25:54,288 - INFO - Checking Playwright browser instance...
-2026-04-27 20:25:54,291 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Target page, context or browser has been closed
-2026-04-27 20:26:04,347 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:26:04,347 - INFO - Checking Playwright browser instance...
-2026-04-27 20:26:04,350 - ERROR - \u274c Failed to enter city: Locator.fill: Target page, context or browser has been closed
-2026-04-27 20:26:44,309 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:26:50,069 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:26:50,069 - INFO - Checking Playwright browser instance...
-2026-04-27 20:26:50,072 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Target page, context or browser has been closed
-2026-04-27 20:27:00,165 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:27:00,165 - INFO - Checking Playwright browser instance...
-2026-04-27 20:27:00,167 - ERROR - \u274c Failed to enter city: Locator.fill: Target page, context or browser has been closed
-2026-04-27 20:27:06,227 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:27:06,228 - INFO - Checking Playwright browser instance...
-2026-04-27 20:27:06,231 - ERROR - \u274c Failed to select city: Locator.wait_for: Target page, context or browser has been closed
-2026-04-27 20:27:47,273 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:27:47,275 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:28:52,338 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:28:52,341 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:28:54,329 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:28:54,329 - INFO - Checking Playwright browser instance...
-2026-04-27 20:28:57,350 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:28:59,173 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:28:59,173 - INFO - Checking Playwright browser instance...
-2026-04-27 20:28:59,217 - INFO - \u2705 City entered: çéôä
-2026-04-27 20:29:00,514 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:29:00,514 - INFO - Checking Playwright browser instance...
-2026-04-27 20:29:00,555 - ERROR - \u274c Failed to select city: Locator.wait_for: Error: strict mode violation: locator("#city_search_forecastautocomplete-list").get_by_text("çéôä", exact=True) resolved to 4 elements:
-    1) <strong>çéôä</strong> aka get_by_text("çéôä").nth(2)
-    2) <strong>çéôä</strong> aka get_by_text("çéôä").nth(3)
-    3) <strong>çéôä</strong> aka get_by_text("çéôä").nth(4)
-    4) <strong>çéôä</strong> aka get_by_text("çéôä").nth(5)
-
-Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("çéôä", exact=True) to be visible
-
-2026-04-27 20:30:30,088 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:30:31,745 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:30:31,745 - INFO - Checking Playwright browser instance...
-2026-04-27 20:30:33,337 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:30:34,178 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:30:34,179 - INFO - Checking Playwright browser instance...
-2026-04-27 20:30:34,226 - INFO - \u2705 City entered: çéôä
-2026-04-27 20:30:45,554 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:30:45,554 - INFO - Checking Playwright browser instance...
-2026-04-27 20:30:45,586 - ERROR - \u274c Failed to select city: Locator.wait_for: Error: strict mode violation: locator("#city_search_forecastautocomplete-list").get_by_text("çéôä", exact=True) resolved to 4 elements:
-    1) <strong>çéôä</strong> aka get_by_text("çéôä").nth(2)
-    2) <strong>çéôä</strong> aka get_by_text("çéôä").nth(3)
-    3) <strong>çéôä</strong> aka get_by_text("çéôä").nth(4)
-    4) <strong>çéôä</strong> aka get_by_text("çéôä").nth(5)
-
-Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("çéôä", exact=True) to be visible
-
-2026-04-27 20:31:29,873 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:31:29,876 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:31:31,336 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:31:31,336 - INFO - Checking Playwright browser instance...
-2026-04-27 20:31:34,912 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-27 20:31:57,587 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:31:57,587 - INFO - Checking Playwright browser instance...
-2026-04-27 20:31:57,635 - INFO - \u2705 City entered: ôúç ú÷ååä
-2026-04-27 20:31:58,923 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:31:58,923 - INFO - Checking Playwright browser instance...
-2026-04-27 20:32:03,920 - INFO - weather_forecast for ôúç ú÷ååä selected successfully
-2026-04-27 20:32:08,634 - INFO - Processing request of type ListToolsRequest
-2026-04-27 20:32:21,694 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:32:21,695 - INFO - Checking Playwright browser instance...
-2026-04-27 20:32:21,697 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Target page, context or browser has been closed
-2026-04-27 20:32:23,123 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:32:23,124 - INFO - Checking Playwright browser instance...
-2026-04-27 20:32:23,126 - ERROR - \u274c Failed to enter city: Locator.fill: Target page, context or browser has been closed
-2026-04-27 20:32:27,227 - INFO - Processing request of type CallToolRequest
-2026-04-27 20:32:27,228 - INFO - Checking Playwright browser instance...
-2026-04-27 20:32:27,230 - ERROR - \u274c Failed to select city: Locator.wait_for: Target page, context or browser has been closed
-2026-04-27 20:32:28,958 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:29:57,212 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:29:57,215 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:32:16,895 - INFO - Processing request of type CallToolRequest
-2026-04-28 20:32:16,896 - INFO - Checking Playwright browser instance...
-2026-04-28 20:32:56,059 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Timeout 30000ms exceeded.
+2026-04-29 12:35:05,304 - INFO - Processing request of type ListToolsRequest
+2026-04-29 12:35:05,306 - INFO - Processing request of type ListToolsRequest
+2026-04-29 12:37:46,720 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:32:47,797 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:32:47,799 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:51:36,528 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:51:36,531 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:57:09,601 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:57:09,603 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:58:37,414 - INFO - Processing request of type ListToolsRequest
+2026-04-29 13:58:37,416 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:02:01,795 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:02:01,797 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:06:36,985 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:06:36,987 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:07:15,843 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:07:15,845 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:08:34,855 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:08:34,857 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:12:54,998 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:12:55,000 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:13:21,830 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:13:21,832 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:15:28,207 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:16:04,979 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:16:04,981 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:17:04,195 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:17:04,196 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:17:05,651 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:17:05,652 - INFO - Checking Playwright browser instance...
+2026-04-29 14:17:11,201 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 14:17:12,347 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:17:12,348 - INFO - Checking Playwright browser instance...
+2026-04-29 14:17:12,386 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-29 14:17:13,409 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:17:13,409 - INFO - Checking Playwright browser instance...
+2026-04-29 14:17:17,743 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 14:17:17,764 - INFO - Playwright page closed successfully
+2026-04-29 14:17:17,764 - INFO - Playwright browser instance reset successfully
+2026-04-29 14:18:31,556 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:18:31,558 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:18:32,989 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:18:32,989 - INFO - Checking Playwright browser instance...
+2026-04-29 14:18:35,346 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 14:18:35,349 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:18:35,349 - INFO - Checking Playwright browser instance...
+2026-04-29 14:18:35,391 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-29 14:18:35,394 - INFO - Processing request of type CallToolRequest
+2026-04-29 14:18:35,394 - INFO - Checking Playwright browser instance...
+2026-04-29 14:18:39,749 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 14:19:50,430 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:19:50,432 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:19:56,616 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:20:56,005 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:20:56,007 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:21:53,217 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:23:57,203 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:24:05,310 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:24:59,334 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:24:59,335 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:31:38,421 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:31:38,423 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:35:19,771 - INFO - Processing request of type ListToolsRequest
+2026-04-29 14:35:19,773 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:07:44,828 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:09:35,287 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:09:35,289 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:11:06,189 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:11:06,192 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:20:06,046 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:20:06,049 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:20:07,577 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:20:07,577 - INFO - Checking Playwright browser instance...
+2026-04-29 15:20:13,790 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 15:20:14,986 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:20:14,987 - INFO - Checking Playwright browser instance...
+2026-04-29 15:20:15,085 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-29 15:20:16,051 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:20:16,051 - INFO - Checking Playwright browser instance...
+2026-04-29 15:20:20,175 - INFO - weather_forecast for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 15:23:25,086 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:23:25,088 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:26:23,880 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:26:23,883 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:27:08,079 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:27:08,081 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:27:52,574 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:27:52,576 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:27:53,918 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:27:53,918 - INFO - Checking Playwright browser instance...
+2026-04-29 15:27:58,203 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 15:27:59,847 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:27:59,848 - INFO - Checking Playwright browser instance...
+2026-04-29 15:27:59,902 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-29 15:28:00,881 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:28:00,882 - INFO - Checking Playwright browser instance...
+2026-04-29 15:28:04,878 - INFO - weather_forecast for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 15:28:55,061 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:28:55,064 - INFO - Processing request of type ListToolsRequest
+2026-04-29 15:28:56,484 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:28:56,484 - INFO - Checking Playwright browser instance...
+2026-04-29 15:28:59,617 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 15:28:59,620 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:28:59,620 - INFO - Checking Playwright browser instance...
+2026-04-29 15:28:59,678 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-29 15:28:59,680 - INFO - Processing request of type CallToolRequest
+2026-04-29 15:28:59,681 - INFO - Checking Playwright browser instance...
+2026-04-29 15:29:13,982 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 22:54:07,464 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:54:07,468 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:54:10,791 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:54:10,792 - INFO - Checking Playwright browser instance...
+2026-04-29 22:54:18,948 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 22:54:18,952 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:54:18,952 - INFO - Checking Playwright browser instance...
+2026-04-29 22:54:19,098 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½
+2026-04-29 22:54:19,100 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:54:19,100 - INFO - Checking Playwright browser instance...
+2026-04-29 22:54:26,888 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 22:55:05,814 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:55:05,817 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:55:07,045 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:55:07,045 - INFO - Checking Playwright browser instance...
+2026-04-29 22:55:10,414 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 22:55:11,397 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:55:11,398 - INFO - Checking Playwright browser instance...
+2026-04-29 22:55:11,448 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½
+2026-04-29 22:55:12,853 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:55:12,853 - INFO - Checking Playwright browser instance...
+2026-04-29 22:55:19,339 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 22:56:27,579 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:56:27,581 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:56:29,103 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:56:29,103 - INFO - Checking Playwright browser instance...
+2026-04-29 22:56:32,175 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 22:56:33,150 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:56:33,150 - INFO - Checking Playwright browser instance...
+2026-04-29 22:56:33,192 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-29 22:56:34,253 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:56:34,254 - INFO - Checking Playwright browser instance...
+2026-04-29 22:56:40,983 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 22:57:13,400 - INFO - Processing request of type ListToolsRequest
+2026-04-29 22:57:14,814 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:57:14,814 - INFO - Checking Playwright browser instance...
+2026-04-29 22:57:16,927 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-29 22:57:17,720 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:57:17,720 - INFO - Checking Playwright browser instance...
+2026-04-29 22:57:17,761 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½
+2026-04-29 22:57:18,624 - INFO - Processing request of type CallToolRequest
+2026-04-29 22:57:18,624 - INFO - Checking Playwright browser instance...
+2026-04-29 22:57:21,705 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-29 22:59:54,083 - INFO - Processing request of type ListToolsRequest
+2026-04-29 23:00:20,229 - INFO - Processing request of type ListToolsRequest
+2026-04-29 23:08:51,542 - INFO - Processing request of type ListToolsRequest
+2026-04-29 23:08:51,544 - INFO - Processing request of type ListToolsRequest
+2026-04-29 23:10:55,263 - INFO - Processing request of type ListToolsRequest
+2026-04-29 23:10:55,265 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:15:27,855 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:15:27,859 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:15:29,980 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:15:29,980 - INFO - Checking Playwright browser instance...
+2026-04-30 19:15:59,728 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 19:15:59,732 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:15:59,733 - INFO - Checking Playwright browser instance...
+2026-04-30 19:15:59,847 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-30 19:15:59,851 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:15:59,851 - INFO - Checking Playwright browser instance...
+2026-04-30 19:16:19,474 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-30 19:31:06,087 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:31:06,089 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:32:49,268 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:32:49,269 - INFO - Checking Playwright browser instance...
+2026-04-30 19:33:20,310 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Timeout 30000ms exceeded.
 Call log:
   - navigating to "https://www.weather2day.co.il/forecast", waiting until "load"
 
-2026-04-28 20:34:49,285 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:34:49,287 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:34:53,432 - INFO - Processing request of type CallToolRequest
-2026-04-28 20:34:53,432 - INFO - Checking Playwright browser instance...
-2026-04-28 20:34:59,118 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 5000ms exceeded.
+2026-04-30 19:33:20,314 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:33:20,315 - INFO - Checking Playwright browser instance...
+2026-04-30 19:33:50,332 - ERROR - \u274c Failed to enter city: Locator.fill: Timeout 30000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("öôú").first to be visible
+  - waiting for locator("#city_search_forecast")
 
-2026-04-28 20:38:38,206 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:38:38,209 - INFO - Processing request of type ListToolsRequest
-2026-04-28 20:38:43,428 - INFO - Processing request of type CallToolRequest
-2026-04-28 20:38:43,428 - INFO - Checking Playwright browser instance...
-2026-04-28 20:38:54,419 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 19:33:50,336 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:33:50,337 - INFO - Checking Playwright browser instance...
+2026-04-30 19:34:00,346 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("öôú").first to be visible
+  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½").first to be visible
 
-2026-04-28 21:24:54,925 - INFO - Processing request of type ListToolsRequest
-2026-04-28 21:24:54,928 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:03:13,732 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:03:13,736 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:03:55,692 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:03:55,694 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:04:00,981 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:00,981 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:16,650 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-29 12:04:16,653 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:16,653 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:16,779 - INFO - \u2705 City entered: éøåùìéí
-2026-04-29 12:04:16,782 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:16,782 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:26,792 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 19:34:08,058 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:34:31,941 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:38:51,485 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:38:51,489 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:38:56,639 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:38:56,640 - INFO - Checking Playwright browser instance...
+2026-04-30 19:39:00,384 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 19:39:00,389 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:39:00,390 - INFO - Checking Playwright browser instance...
+2026-04-30 19:39:00,444 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 19:39:00,449 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:39:00,449 - INFO - Checking Playwright browser instance...
+2026-04-30 19:39:06,824 - INFO - weather_forecast for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-30 19:39:06,892 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:42:10,078 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:42:10,083 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:42:29,511 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:42:29,512 - INFO - Checking Playwright browser instance...
+2026-04-30 19:42:34,913 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 19:42:34,917 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:42:34,917 - INFO - Checking Playwright browser instance...
+2026-04-30 19:42:34,992 - INFO - \u2705 City entered: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+2026-04-30 19:42:34,997 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:42:34,998 - INFO - Checking Playwright browser instance...
+2026-04-30 19:42:41,345 - INFO - weather_forecast for ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-30 19:44:19,346 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:44:19,349 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:44:23,412 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:44:23,412 - INFO - Checking Playwright browser instance...
+2026-04-30 19:44:28,910 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 19:44:28,913 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:44:28,913 - INFO - Checking Playwright browser instance...
+2026-04-30 19:44:28,961 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 19:44:28,963 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:44:28,963 - INFO - Checking Playwright browser instance...
+2026-04-30 19:44:33,612 - INFO - weather_forecast for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-30 19:44:33,642 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:50:13,763 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:50:13,768 - INFO - Processing request of type ListToolsRequest
+2026-04-30 19:50:25,905 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:50:25,906 - INFO - Checking Playwright browser instance...
+2026-04-30 19:50:28,807 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 19:50:28,810 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:50:28,810 - INFO - Checking Playwright browser instance...
+2026-04-30 19:50:28,867 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 19:50:28,870 - INFO - Processing request of type CallToolRequest
+2026-04-30 19:50:28,870 - INFO - Checking Playwright browser instance...
+2026-04-30 19:50:32,652 - INFO - weather_forecast for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ selected successfully
+2026-04-30 19:50:44,364 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:04:02,934 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:04:02,937 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:04:10,856 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:04:10,856 - INFO - Checking Playwright browser instance...
+2026-04-30 20:04:42,529 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 20:04:42,531 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:04:42,532 - INFO - Checking Playwright browser instance...
+2026-04-30 20:04:42,598 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 20:04:42,600 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:04:42,600 - INFO - Checking Playwright browser instance...
+2026-04-30 20:04:51,054 - ERROR - \u274c Failed to select city: Locator.wait_for: Error: strict mode violation: locator(".current-weather") resolved to 2 elements:
+    1) <div class="current-weather">ï¿½</div> aka locator("#ims").get_by_text("ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: 19:40 ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 20:04 ï¿½ï¿½ï¿½: 19.1 ï¿½ï¿½\"ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: 24.8")
+    2) <div class="current-weather">ï¿½</div> aka locator("#ecmwf").get_by_text("ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: 19:40 ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 20:04 ï¿½ï¿½ï¿½: 19.1 ï¿½ï¿½\"ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: 24.8")
+
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("çåìåï").first to be visible
+  - waiting for locator(".current-weather") to be visible
 
-2026-04-29 12:04:30,776 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:30,776 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:32,627 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-29 12:04:32,631 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:32,631 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:32,699 - INFO - \u2705 City entered: éøåùìéí
-2026-04-29 12:04:32,702 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:04:32,702 - INFO - Checking Playwright browser instance...
-2026-04-29 12:04:42,715 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 20:05:07,284 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:07:38,719 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:07:38,722 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:07:43,750 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:07:43,750 - INFO - Checking Playwright browser instance...
+2026-04-30 20:07:47,054 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 20:07:47,057 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:07:47,057 - INFO - Checking Playwright browser instance...
+2026-04-30 20:07:47,108 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 20:07:47,110 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:07:47,111 - INFO - Checking Playwright browser instance...
+2026-04-30 20:08:08,452 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 15000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("çåìåï").first to be visible
+  - waiting for locator(".current-weather").first to be visible
+    34 ï¿½ locator resolved to hidden <div class="current-weather">ï¿½</div>
 
-2026-04-29 12:05:51,450 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:05:54,040 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:05:54,040 - INFO - Checking Playwright browser instance...
-2026-04-29 12:06:04,056 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 20:08:08,457 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:35:09,304 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:35:09,306 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:35:26,434 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:35:26,437 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:35:27,729 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:35:27,729 - INFO - Checking Playwright browser instance...
+2026-04-30 20:35:30,104 - INFO - \u2705 Weather forecast page opened successfully
+2026-04-30 20:35:31,006 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:35:31,006 - INFO - Checking Playwright browser instance...
+2026-04-30 20:35:31,048 - INFO - \u2705 City entered: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+2026-04-30 20:35:31,917 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:35:31,917 - INFO - Checking Playwright browser instance...
+2026-04-30 20:35:52,721 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 15000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("ðúðéä").first to be visible
+  - waiting for locator(".current-weather").first to be visible
+    34 ï¿½ locator resolved to hidden <div class="current-weather">ï¿½</div>
 
-2026-04-29 12:06:07,202 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:06:07,202 - INFO - Checking Playwright browser instance...
-2026-04-29 12:06:08,697 - INFO - \u2705 Weather forecast page opened successfully
-2026-04-29 12:06:10,733 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:06:10,734 - INFO - Checking Playwright browser instance...
-2026-04-29 12:06:10,755 - INFO - \u2705 City entered: ðúðéä
-2026-04-29 12:07:26,412 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:07:29,805 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:07:29,806 - INFO - Checking Playwright browser instance...
-2026-04-29 12:07:35,955 - INFO - weather_forecast for ðúðéä selected successfully
-2026-04-29 12:07:37,798 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:07:37,798 - INFO - Checking Playwright browser instance...
-2026-04-29 12:07:37,800 - ERROR - \u274c Failed to enter city: Locator.fill: Target page, context or browser has been closed
-2026-04-29 12:07:41,045 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:07:41,046 - INFO - Checking Playwright browser instance...
-2026-04-29 12:07:41,047 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Target page, context or browser has been closed
-2026-04-29 12:08:37,312 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:08:38,813 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:08:38,813 - INFO - Checking Playwright browser instance...
-2026-04-29 12:08:38,815 - ERROR - \u274c Failed to select city: Locator.wait_for: Target page, context or browser has been closed
-2026-04-29 12:11:30,883 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:11:30,885 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:11:32,421 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:11:32,421 - INFO - Checking Playwright browser instance...
-2026-04-29 12:11:43,079 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 20:35:54,156 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:37:58,833 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:38:05,929 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:38:05,930 - INFO - Checking Playwright browser instance...
+2026-04-30 20:38:35,960 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Timeout 30000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("ðúðéä").first to be visible
+  - navigating to "https://www.weather2day.co.il/forecast", waiting until "load"
 
-2026-04-29 12:11:53,386 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:12:01,308 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:12:02,134 - INFO - Processing request of type CallToolRequest
-2026-04-29 12:12:02,134 - INFO - Checking Playwright browser instance...
-2026-04-29 12:12:12,138 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+2026-04-30 20:38:46,589 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:38:46,590 - INFO - Checking Playwright browser instance...
+2026-04-30 20:39:16,600 - ERROR - \u274c Failed to enter city: Locator.fill: Timeout 30000ms exceeded.
 Call log:
-  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("ðúðéä").first to be visible
+  - waiting for locator("#city_search_forecast")
 
-2026-04-29 12:12:24,591 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:13:18,508 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:15:17,144 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:16:46,477 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:16:46,479 - INFO - Processing request of type ListToolsRequest
-2026-04-29 12:16:55,741 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:39:27,727 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:39:27,727 - INFO - Checking Playwright browser instance...
+2026-04-30 20:39:37,743 - ERROR - \u274c Failed to select city: Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("#city_search_forecastautocomplete-list").get_by_text("úì àáéá").first to be visible
+
+2026-04-30 20:40:44,174 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:40:44,176 - INFO - Processing request of type ListToolsRequest
+2026-04-30 20:41:12,775 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:41:12,776 - INFO - Checking Playwright browser instance...
+2026-04-30 20:41:43,414 - ERROR - \u274c Failed to open weather forecast page: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.weather2day.co.il/forecast", waiting until "load"
+
+2026-04-30 20:42:13,148 - INFO - Processing request of type CallToolRequest
+2026-04-30 20:42:13,148 - INFO - Checking Playwright browser instance...
+2026-04-30 20:42:43,157 - ERROR - \u274c Failed to enter city: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#city_search_forecast")
+

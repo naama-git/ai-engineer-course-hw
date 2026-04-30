@@ -31,3 +31,7 @@ Alternatively, I can find out for you if you'd like.
 
 - Query: kdlfh
 - I cannot provide weather information based on the input "kdlfh". Please provide a valid city name.
+
+
+-Query: what the whether in Netanya?
+- OK. The weather in Netanya is currently 24°C with a clear sky. There's a light breeze coming from the west. Enjoy your day!

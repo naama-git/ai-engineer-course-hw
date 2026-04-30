@@ -1,4 +1,5 @@
 import os
+import traceback
 os.environ['PYTHONHTTPSVERIFY'] = '0'
 import certifi
 import ssl
@@ -27,13 +28,13 @@ class ChatHost:
         self.tool_clients: dict[str, tuple[MCPClient, str]] = {}
         self.clients_connected = False
         self.exit_stack = AsyncExitStack()
-
         
         self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
         self.model = os.environ["GEMINI_MODEL"]
 
         with open("system_prompt.txt", "r", encoding="utf-8") as f:
             self.system_prompt = f.read()
+
 
     async def connect_mcp_clients(self):
         """Connect all configured MCP clients once."""
@@ -102,8 +103,9 @@ class ChatHost:
                     "name": exposed_name,
                     "description": f"[{client.client_name}] {tool.description}",
                     "parameters": formatted_parameters
-                }
-                google_tools.append(tool_def)
+                    }
+                    google_tools.append(tool_def)
+                    # print(list(self.tool_clients.keys()))
 
             except Exception as e:
                 print(f"Warning: Failed to get tools from {client.client_name}: {str(e)}")
@@ -117,7 +119,9 @@ class ChatHost:
 
     async def process_query(self, query: str) -> str:
         """Process a query using Gemini and available tools"""
+
         tools_list = await self.get_available_tools() 
+        print(f"Available tools: {[tool['name'] for tool in tools_list]}")
         
         config = types.GenerateContentConfig(
         tools=[{"function_declarations": tools_list}],
@@ -150,6 +154,8 @@ class ChatHost:
             response = chat.send_message(tool_results)
         
         final_text.append(response.text)
+        if not final_text:
+            final_text.append("No response generated.")
         return "\n".join(final_text)
     
     async def chat_loop(self):
@@ -167,9 +173,9 @@ class ChatHost:
                 response = await self.process_query(query)
                 print("\n" + response)
 
-                
-                
             except Exception as e:
+                print("\n--- Full Error Traceback ---")
+                traceback.print_exc()
                 print(f"\nchat_loop Error: {str(e)}")
                 
     async def cleanup(self):

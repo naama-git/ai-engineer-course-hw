@@ -1,6 +1,9 @@
+import asyncio
+import os
+
 from mcp.server.fastmcp import FastMCP
-from playwright.sync_api import sync_playwright
 from playwright.async_api import async_playwright
+from google import genai
 
 import logging
 
@@ -24,6 +27,9 @@ async def get_page():
     if _playwright is None:
         _playwright = await async_playwright().start()
         _browser = await _playwright.chromium.launch(headless=True)
+        _page = await _browser.new_page()
+
+    if _page.is_closed():
         _page = await _browser.new_page()
     return _page
 
@@ -73,17 +79,53 @@ async def select_weather_forecast_city_israel(option: str):
         await target_option.click()
 
         await page.wait_for_load_state("networkidle")
+        await asyncio.sleep(2)
+
+        weather_container = page.locator(".current-weather:visible").first
+        await weather_container.wait_for(state="visible", timeout=15000)
+        raw_weather_info = await weather_container.inner_text()
 
         logging.info(f"weather_forecast for {str(option)} selected successfully")
 
         await page.close()
-        logging.info("Playwright page closed successfully")
-        global _playwright, _browser, _page
-        _playwright, _browser, _page = None, None, None
-        logging.info("Playwright browser instance reset successfully")
+        logging.info(f"Raw whether information: {raw_weather_info}")
+        return raw_weather_info
 
     except Exception as e:
         logging.error(f"❌ Failed to select city: {str(e)}")
+
+
+@mcp.tool()      
+async def refine_enrich_context(raw_weather_data: str):
+    """
+    A processing tool that takes raw, technical weather data (temperature, humidity, conditions) and transforms it into a polished, user-friendly summary.
+    Use this ONLY after you have gathered all necessary data from other weather tools.
+    Args:
+        raw_weather_data: The FULL technical text/JSON returned from previous weather tool calls. 
+        DO NOT just pass the city name; pass the actual weather statistics found.
+    """
+    
+    prompt = f"""
+    You are a friendly weather assistant. Below is raw weather data or information. 
+    Please rewrite it into a concise, clear, and professional summary for the user. 
+    Focus on:
+    - Current temperature and "feels like".
+    - Weather conditions (sunny, rainy, etc.).
+    - Practical advice (e.g., "take an umbrella").
+    
+    Raw Data: {raw_weather_data}
+    """
+    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+    model_name = os.environ.get("GEMINI_MODEL")
+
+    try:
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        return f"Error refining context: {str(e)}"
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
